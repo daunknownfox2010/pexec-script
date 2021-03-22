@@ -8,20 +8,20 @@ Command | Description
 ------- | -----------
 `$EchoMsg?[MESSAGE]` | Simple but nice to have. Echo a simple message.
 `$Pause?` | Simple but useless, really only useful for probably testing your run list.
-`$CreateFile?[CONTENT]|[PATH]` | Inserts the contents to a file.
-`$AppendFile?[CONTENT]|[PATH]` | Appends the contents to a file. (no overwrite)
-`$CopyFile?[PATH]|[PATH]` | Copies a file from the first specified path to the second.
+`$CreateFile?[CONTENT]\|[PATH]` | Inserts the contents to a file.
+`$AppendFile?[CONTENT]\|[PATH]` | Appends the contents to a file. (no overwrite)
+`$CopyFile?[PATH]\|[PATH]` | Copies a file from the first specified path to the second.
 `$MakeDir?[PATH]` | Creates a directory.
-`$MovePath?[PATH]|[PATH]` | Moves a file/folder from the first specified path to the second.
+`$MovePath?[PATH]\|[PATH]` | Moves a file/folder from the first specified path to the second.
 `$RemovePath?[PATH]` | Deletes the specified file/folder.
-`$SymbolicLink?[PATH]|[PATH]` | Performs a symbolic link. The first specified path is the target, the second specified path is the link. Requires developer mode.
-`$JunctionLink?[PATH]|[PATH]` | Performs a junction (directory) link. The first specified path is the target, the second specified path is the link.
-`$FileAttribute?[-/+]|[PATH]` | Sets a file attribute on the specified path. Useful for making files read-only, etc.
-`$ExtractTAR?[PATH]|[PATH]` | Extracts the tar file from the first specified path to the second specified path.
-`$URLExtractTAR?[URL]|[PATH]` | Handles the tar file from the specified URL by piping and extracting to the second specified path.
-`$Extract7ZA?[PATH]|[PATH]` | Extracts a file using 7ZA, following convention of `$ExtractTAR?` above. Requires **7za.exe** in _`%PELE_TEMPDIR_EXEC%`_.
-`$DecompressZSTD?[PATH]|[PATH]` | Decompresses a ZSTD compressed file to the specified second path, this creates a new (uncompressed) copy of the file. Requires **zstd.exe** in _`%PELE_TEMPDIR_EXEC%`_.
-`$DownloadFile?[URL]|[PATH]` | Downloads the file to the specified path, creating a file from the downloaded data.
+`$SymbolicLink?[PATH]\|[PATH]` | Performs a symbolic link. The first specified path is the target, the second specified path is the link. Requires developer mode.
+`$JunctionLink?[PATH]\|[PATH]` | Performs a junction (directory) link. The first specified path is the target, the second specified path is the link.
+`$FileAttribute?[-/+]\|[PATH]` | Sets a file attribute on the specified path. Useful for making files read-only, etc.
+`$ExtractTAR?[PATH]\|[PATH]` | Extracts the tar file from the first specified path to the second specified path.
+`$URLExtractTAR?[URL]\|[PATH]` | Handles the tar file from the specified URL by piping and extracting to the second specified path.
+`$Extract7ZA?[PATH]\|[PATH]` | Extracts a file using 7ZA, following convention of `$ExtractTAR?` above. Requires **7za.exe** in _`%PELE_TEMPDIR_EXEC%`_.
+`$DecompressZSTD?[PATH]\|[PATH]` | Decompresses a ZSTD compressed file to the specified second path, this creates a new (uncompressed) copy of the file. Requires **zstd.exe** in _`%PELE_TEMPDIR_EXEC%`_.
+`$DownloadFile?[URL]\|[PATH]` | Downloads the file to the specified path, creating a file from the downloaded data.
 `$ExecuteCmd?[CMD]` | Executes a command. Requires command execution to be allowed from the configuration file.
 ### Facts about [PATH]
 You'll notice that `[PATH]` in run lists works a bit weirdly. Originally you could do anything with file/folder manipulation but I decided to limit its reach for neat & tidy reasons.
@@ -32,6 +32,7 @@ Prefix | Description
 `~>` | The current script working directory, typically this is _`%PELE_TEMPDIR_EXEC%`_.
 `WDIR>` | The current executable working directory, this is the working directory the program wants to launch itself in.
 `EDIR>` | This is the executable program directory, this is where the (.exe) file is located usually unless overriden.
+
 Also, yes, you can still directory escape using `..`. Honestly, Batch is annoying enough to deal with as-is to get anything with complexity working so I ain't stopping you with magic statement checks.
 ### Using environment variables
 Yes, due to the script using delayed variable expansion you can actually get away with using the `!VARIABLE!` method here.
