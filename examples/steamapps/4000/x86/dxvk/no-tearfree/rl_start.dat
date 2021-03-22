@@ -1,0 +1,8 @@
+$EchoMsg?Installing DXVK (tearfree disabled) . . .
+$URLExtractTAR?https://github.com/doitsujin/dxvk/releases/download/v1.8.1/dxvk-1.8.1.tar.gz|~>.
+$MovePath?~>dxvk-1.8.1\x32\d3d9.dll|~>d3d9.dll
+$RemovePath?~>dxvk-1.8.1
+$CreateFile?d3d9.evictManagedOnUnlock = True|~>dxvk.conf
+$AppendFile?d3d9.invariantPosition = False|~>dxvk.conf
+$AppendFile?d3d9.tearFree = False|~>dxvk.conf
+$SymbolicLink?~>d3d9.dll|EDIR>d3d9.dll
