@@ -1,0 +1,13 @@
+$EchoMsg?Installing DXVK (tearfree disabled) . . .
+$URLExtractTAR?https://github.com/doitsujin/dxvk/releases/download/v1.8.1/dxvk-1.8.1.tar.gz|~>.
+$MovePath?~>dxvk-1.8.1\x64\dxgi.dll|~>dxgi.dll
+$MovePath?~>dxvk-1.8.1\x64\d3d10core.dll|~>d3d10core.dll
+$MovePath?~>dxvk-1.8.1\x64\d3d11.dll|~>d3d11.dll
+$RemovePath?~>dxvk-1.8.1
+$CreateFile?d3d11.invariantPosition = False|~>dxvk.conf
+$AppendFile?dxgi.tearFree = False|~>dxvk.conf
+$AppendFile?dxgi.maxDeviceMemory = 4096|~>dxvk.conf
+$AppendFile?dxgi.maxSharedMemory = 4096|~>dxvk.conf
+$SymbolicLink?~>dxgi.dll|EDIR>dxgi.dll
+$SymbolicLink?~>d3d10core.dll|EDIR>d3d10core.dll
+$SymbolicLink?~>d3d11.dll|EDIR>d3d11.dll
