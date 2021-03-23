@@ -1,0 +1,28 @@
+$EchoMsg?Installing DXVK (tearfree disabled) & VKD3D . . .
+$DownloadFile?https://chocolatey.org/7za.exe|~>7za.exe
+$DownloadFile?https://github.com/facebook/zstd/releases/download/v1.4.9/zstd-v1.4.9-win64.zip|~>zstd-win64.zip
+$MakeDir?~>Zstd
+$Extract7ZA?~>zstd-win64.zip|~>Zstd
+$RemovePath?~>7za.exe
+$RemovePath?~>zstd-win64.zip
+$MovePath?~>Zstd\zstd.exe|~>zstd.exe
+$RemovePath?~>Zstd
+$URLExtractTAR?https://github.com/doitsujin/dxvk/releases/download/v1.8.1/dxvk-1.8.1.tar.gz|~>.
+$DownloadFile?https://github.com/HansKristian-Work/vkd3d-proton/releases/download/v2.2/vkd3d-proton-2.2.tar.zst|~>vkd3d-proton.tar.zst
+$DecompressZSTD?~>vkd3d-proton.tar.zst|~>vkd3d-proton.tar
+$RemovePath?~>zstd.exe
+$RemovePath?~>vkd3d-proton.tar.zst
+$ExtractTAR?~>vkd3d-proton.tar|~>.
+$RemovePath?~>vkd3d-proton.tar
+$MovePath?~>dxvk-1.8.1\x64\dxgi.dll|~>dxgi.dll
+$MovePath?~>dxvk-1.8.1\x64\d3d10core.dll|~>d3d10core.dll
+$MovePath?~>dxvk-1.8.1\x64\d3d11.dll|~>d3d11.dll
+$RemovePath?~>dxvk-1.8.1
+$CreateFile?d3d11.invariantPosition = False|~>dxvk.conf
+$AppendFile?dxgi.tearFree = False|~>dxvk.conf
+$MovePath?~>vkd3d-proton-2.2\x64\d3d12.dll|~>d3d12.dll
+$RemovePath?~>vkd3d-proton-2.2
+$SymbolicLink?~>dxgi.dll|EDIR>dxgi.dll
+$SymbolicLink?~>d3d10core.dll|EDIR>d3d10core.dll
+$SymbolicLink?~>d3d11.dll|EDIR>d3d11.dll
+$SymbolicLink?~>d3d12.dll|EDIR>d3d12.dll
