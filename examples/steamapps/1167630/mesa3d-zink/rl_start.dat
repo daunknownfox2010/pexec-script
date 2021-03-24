@@ -10,8 +10,10 @@ $RemovePath?~>7za.exe
 $RemovePath?~>vulkan-runtime-components.zip
 $RemovePath?~>mesa3d-21.0.0-release-mingw.7z
 $MovePath?~>VulkanRT\VulkanRT-1.2.170.0-Components\x64\vulkan-1.dll|~>vulkan-1.dll
+$MovePath?~>Mesa3D\x64\libglapi.dll|~>libglapi.dll
 $MovePath?~>Mesa3D\x64\opengl32.dll|~>opengl32.dll
 $RemovePath?~>VulkanRT
 $RemovePath?~>Mesa3D
 $SymbolicLink?~>vulkan-1.dll|EDIR>vulkan-1.dll
+$SymbolicLink?~>libglapi.dll|EDIR>libglapi.dll
 $SymbolicLink?~>opengl32.dll|EDIR>opengl32.dll
