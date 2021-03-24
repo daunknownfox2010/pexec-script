@@ -9,7 +9,7 @@ Variable | Description
 `@sConfigFileURL` | Specifies a configuration file to download and use. This is a URL pointing to a raw file.
 `@sExecutableName` | This doesn't do anything besides allow you to set a pretty name for the current program being launched.
 `@pOverrideExecutableDir` | Overrides the script's targeted executable directory (where the program .exe is.)
-`@sEnvironmentVars` | Sets specified environment variables before program launch. Example: _`VARIABLE1:Hello|VARIABLE2:World`_
+`@sEnvironmentVars` | Sets specified environment variables before program launch. Example: _`VARIABLE1:Hello\|VARIABLE2:World`_
 `@pStartRunListFile` | Specifies the starting "run list" the script will use before launch. This is a path pointing to a file.
 `@pEndRunListFile` | Specifies the ending "run list" the script will use after program termination. This is a path pointing to a file.
 `@sStartRunListURL` | Specifies the starting "run list" the script will use before launch. This is a URL pointing to a raw file.
