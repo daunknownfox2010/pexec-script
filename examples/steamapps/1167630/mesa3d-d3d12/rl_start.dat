@@ -1,0 +1,16 @@
+$EchoMsg?Installing Mesa3D (D3D12) . . .
+$DownloadFile?https://chocolatey.org/7za.exe|~>7za.exe
+$DownloadFile?https://github.com/pal1000/mesa-dist-win/releases/download/21.0.0/mesa3d-21.0.0-release-msvc.7z|~>mesa3d-21.0.0-release-msvc.7z
+$MakeDir?~>Mesa3D
+$Extract7ZA?~>mesa3d-21.0.0-release-msvc.7z|~>Mesa3D
+$RemovePath?~>7za.exe
+$RemovePath?~>mesa3d-21.0.0-release-msvc.7z
+$MovePath?~>Mesa3D\x64\libglapi.dll|~>libglapi.dll
+$MovePath?~>Mesa3D\x64\dxil.dll|~>dxil.dll
+$MovePath?~>Mesa3D\x64\opengl32.dll|~>opengl32.dll
+$MovePath?~>Mesa3D\x64\openglon12.dll|~>openglon12.dll
+$RemovePath?~>Mesa3D
+$SymbolicLink?~>libglapi.dll|EDIR>libglapi.dll
+$SymbolicLink?~>dxil.dll|EDIR>dxil.dll
+$SymbolicLink?~>opengl32.dll|EDIR>opengl32.dll
+$SymbolicLink?~>openglon12.dll|EDIR>openglon12.dll

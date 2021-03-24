@@ -1,6 +1,6 @@
 $EchoMsg?Installing Mesa3D (Zink) . . .
 $DownloadFile?https://chocolatey.org/7za.exe|~>7za.exe
-$DownloadFile?https://sdk.lunarg.com/sdk/download/1.2.170.0/windows/vulkan-runtime-components.zip|~>vulkan-runtime-components.zip
+$DownloadFile?https://sdk.lunarg.com/sdk/download/1.2.170.0/windows/vulkan-runtime-components.zip?u=|~>vulkan-runtime-components.zip
 $DownloadFile?https://github.com/pal1000/mesa-dist-win/releases/download/21.0.0/mesa3d-21.0.0-release-mingw.7z|~>mesa3d-21.0.0-release-mingw.7z
 $MakeDir?~>VulkanRT
 $MakeDir?~>Mesa3D
