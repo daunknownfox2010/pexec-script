@@ -1,6 +1,6 @@
 @ECHO OFF
 @REM -= PELE Launcher by Jai the Fox =-
-@REM -== Version v1.0 ==-
+@REM -== Version 1.5 ==-
 
 @REM -- Shorten the current directory path, storing the long and short working directories in variables
 SET "PELE_EXECUTABLE_LWDIR=%CD%"
@@ -241,7 +241,7 @@ FOR /F "usebackq tokens=*" %%L IN ("%~fs1") DO (
                     )
                     IF EXIST "!PELE_RUNLIST_TARGETDIR1!" (
                         ECHO ^[RL^] Extracting "!PELE_RUNLIST_TARGETDIR1!" to: "!PELE_RUNLIST_TARGETDIR2!" 
-                        "%PELE_TEMPDIR_EXEC%\7za.exe" x "-o!PELE_RUNLIST_TARGETDIR2!" "!PELE_RUNLIST_TARGETDIR1!"
+                        "%PELE_TEMPDIR_EXEC%\7za.exe" x "-o!PELE_RUNLIST_TARGETDIR2!" "!PELE_RUNLIST_TARGETDIR1!" 2>&1 >NUL
                     )
                 ) ELSE (
                     ECHO ^[RL^] Could not find "7za.exe" ^^! 
@@ -265,7 +265,7 @@ FOR /F "usebackq tokens=*" %%L IN ("%~fs1") DO (
                     )
                     IF EXIST "!PELE_RUNLIST_TARGETDIR1!" (
                         ECHO ^[RL^] Decompressing "!PELE_RUNLIST_TARGETDIR1!" to: "!PELE_RUNLIST_TARGETDIR2!" 
-                        "%PELE_TEMPDIR_EXEC%\zstd.exe" -d "!PELE_RUNLIST_TARGETDIR1!" -o "!PELE_RUNLIST_TARGETDIR2!"
+                        "%PELE_TEMPDIR_EXEC%\zstd.exe" -d "!PELE_RUNLIST_TARGETDIR1!" -o "!PELE_RUNLIST_TARGETDIR2!" 2>&1 >NUL
                     )
                 ) ELSE (
                     ECHO ^[RL^] Could not find "zstd.exe" ^^! 
@@ -519,7 +519,7 @@ IF DEFINED PELE_CONFIG_FILE_URL (
 )
 IF DEFINED PELE_ENVIRONMENT_VARS (
     ECHO ^[CONFIG^] Setting environment variables . . . 
-    FOR %%V IN ("%PELE_ENVIRONMENT_VARS:,=" "%") DO (
+    FOR %%V IN ("%PELE_ENVIRONMENT_VARS:|=" "%") DO (
         FOR /F "usebackq tokens=1* delims=:" %%A IN ('%%~V') DO (
             SET "%%~A=%%~B"
         )

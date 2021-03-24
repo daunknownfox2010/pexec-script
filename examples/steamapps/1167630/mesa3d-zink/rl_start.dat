@@ -1,0 +1,17 @@
+$EchoMsg?Installing Mesa3D (Zink) . . .
+$DownloadFile?https://chocolatey.org/7za.exe|~>7za.exe
+$DownloadFile?https://sdk.lunarg.com/sdk/download/1.2.170.0/windows/vulkan-runtime-components.zip|~>vulkan-runtime-components.zip
+$DownloadFile?https://github.com/pal1000/mesa-dist-win/releases/download/21.0.0/mesa3d-21.0.0-release-mingw.7z|~>mesa3d-21.0.0-release-mingw.7z
+$MakeDir?~>VulkanRT
+$MakeDir?~>Mesa3D
+$Extract7ZA?~>vulkan-runtime-components.zip|~>VulkanRT
+$Extract7ZA?~>mesa3d-21.0.0-release-mingw.7z|~>Mesa3D
+$RemovePath?~>7za.exe
+$RemovePath?~>vulkan-runtime-components.zip
+$RemovePath?~>mesa3d-21.0.0-release-mingw.7z
+$MovePath?~>VulkanRT\VulkanRT-1.2.170.0-Components\x64\vulkan-1.dll|~>vulkan-1.dll
+$MovePath?~>Mesa3D\x64\opengl32.dll|~>opengl32.dll
+$RemovePath?~>VulkanRT
+$RemovePath?~>Mesa3D
+$SymbolicLink?~>vulkan-1.dll|EDIR>vulkan-1.dll
+$SymbolicLink?~>opengl32.dll|EDIR>opengl32.dll
