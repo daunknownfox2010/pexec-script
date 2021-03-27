@@ -1,0 +1,4 @@
+$RemovePath?EDIR>d3d11.dll
+$RemovePath?EDIR>d3d10core.dll
+$RemovePath?EDIR>dxgi.dll
+$RemovePath?WDIR>steam_appid.txt

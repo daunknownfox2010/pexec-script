@@ -1,0 +1,10 @@
+$EchoMsg?Installing D3D11on12 . . .
+$DownloadFile?https://chocolatey.org/7za.exe|~>7za.exe
+$DownloadFile?https://github.com/doitsujin/elf-auf-zwoelf/releases/download/v1.0/d3d11on12.zip|~>d3d11on12.zip
+$MakeDir?~>D3D11on12
+$Extract7ZA?~>d3d11on12.zip|~>D3D11on12
+$RemovePath?~>7za.exe
+$RemovePath?~>d3d11on12.zip
+$MovePath?~>D3D11on12\x64\d3d11.dll|~>d3d11.dll
+$RemovePath?~>D3D11on12
+$SymbolicLink?~>d3d11.dll|EDIR>d3d11.dll
