@@ -1,5 +1,0 @@
-$RemovePath?EDIR>openglon12.dll
-$RemovePath?EDIR>opengl32.dll
-$RemovePath?EDIR>dxil.dll
-$RemovePath?EDIR>libglapi.dll
-$RemovePath?WDIR>steam_appid.txt

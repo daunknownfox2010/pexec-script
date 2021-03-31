@@ -1,4 +1,0 @@
-$RemovePath?EDIR>opengl32.dll
-$RemovePath?EDIR>libglapi.dll
-$RemovePath?EDIR>vulkan-1.dll
-$RemovePath?WDIR>steam_appid.txt
